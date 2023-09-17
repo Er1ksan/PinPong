@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _winner;
     private GameObject _ball;
     private float _timeRemaining;
-    //private bool _isTimerRunning = false;
+    private bool _isTimerRunning = false;
     private int _blueScore = 0;
     private int _redScore = 0;
     public static event Action TimeIsLeft;
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator OnStartRound()
     {
-        Time.timeScale = 0;
+        _isTimerRunning = false;
         float time = _timeBeforeStart;
         
         for (; ; )
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
             {
                 _notification.gameObject.SetActive(false);
                 _ball = Instantiate(_ballPrefab, Vector3.zero, Quaternion.identity);
-                Time.timeScale = 1;
+                _isTimerRunning = true;
                 break;
             }
         }
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
     private void OnGoalNotification(string colorOfGoal)
     {
         _ball.SetActive(false);
-        Time.timeScale = 0;
+        _isTimerRunning = false;
         Color color = colorOfGoal == "Blue" ? Color.blue:Color.red;
         _notification.gameObject.SetActive(true);
         _notification.color = color;
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
             if (time <= 0)
             {
                 _ball.SetActive(true);
-                Time.timeScale = 1;
+                _isTimerRunning = true;
                 _notification.gameObject.SetActive(false);
                 break;
             }
@@ -145,7 +145,8 @@ public class GameManager : MonoBehaviour
     }
     private void Timer()
     {
-
+        if(_isTimerRunning)
+        {
             if (_timeRemaining > 0)
             {
                 _timeRemaining -= Time.deltaTime;
@@ -157,6 +158,6 @@ public class GameManager : MonoBehaviour
                 TimeIsLeft?.Invoke();
                 Time.timeScale = 0;
             }
-        
+        }
     }
 }
