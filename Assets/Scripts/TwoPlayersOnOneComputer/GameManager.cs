@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     }
     private void LookingForWinner()
     {
+        _winnerWindow.SetActive(true);
         if (_blueScore > _redScore)
         {
             _winner.color = Color.red;
