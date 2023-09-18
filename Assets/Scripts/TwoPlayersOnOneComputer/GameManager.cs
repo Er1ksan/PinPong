@@ -28,8 +28,9 @@ public class GameManager : MonoBehaviour
     private int _blueScore = 0;
     private int _redScore = 0;
     public static event Action TimeIsLeft;
-    private void Start()
+    private void OnEnable()
     {
+        Time.timeScale = 1;
         _blueScoreText.text = _blueScore.ToString();
         _redScoreText.text = _redScore.ToString();
         Ball.goalTo += OnGoalSwitchScore;
@@ -38,11 +39,15 @@ public class GameManager : MonoBehaviour
         _timeRemaining = _secondsInRound;
         StartCoroutine(OnStartRound());
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         Ball.goalTo -= OnGoalSwitchScore;
         Ball.goalTo -= OnGoalNotification;
         TimeIsLeft -= LookingForWinner;
+    }
+    private void Start()
+    {
+        
     }
     void Update()
     {
@@ -52,12 +57,13 @@ public class GameManager : MonoBehaviour
     private void LookingForWinner()
     {
         _winnerWindow.SetActive(true);
-        if (_blueScore > _redScore)
+        _ball.SetActive(false);
+        if (_blueScore < _redScore)
         {
             _winner.color = Color.red;
             _winner.text = "Красный, красава!";
         }
-        else if (_blueScore < _redScore)
+        else if (_blueScore > _redScore)
         {
             _winner.color = Color.blue;
             _winner.text = "Синий, красава!";
@@ -157,6 +163,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Time has run out!");
                 _timeRemaining = 0;
                 TimeIsLeft?.Invoke();
+                _isTimerRunning = false;
                 Time.timeScale = 0;
             }
         }
