@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2af3a2f13e222a54cbc03f899f37da83
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: ab7802ef9591f6b4c8f19404ff6c4a7c
+    path: Assets/Scenes/1x1OnDeviceGame 1.unity
+    guid: ff728e2af38ad9640b180ee9f7a36098
+  - enabled: 1
+    path: Assets/Scenes/SoloMenu.unity
+    guid: 504246379f65b6546973f40780382447
+  - enabled: 1
+    path: Assets/Scenes/SoloGame.unity
+    guid: 116ce0f0a8303864fa0c40bdf2853845
   m_configObjects: {}
