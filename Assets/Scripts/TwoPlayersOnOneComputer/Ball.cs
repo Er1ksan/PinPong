@@ -10,7 +10,7 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] private float _speed;
     private SpriteRenderer _spriteRenderer;
-
+    private float _currentSpeed;
     public static event Action<string> goalTo;
     void Start()
     {
@@ -18,6 +18,7 @@ public class Ball : MonoBehaviour
     }
     private void OnEnable()
     {
+        _currentSpeed = _speed;
         transform.position = Vector2.zero;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         switch (UnityEngine.Random.Range(0, 2))
@@ -46,6 +47,7 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        _currentSpeed++;
         if(collision.gameObject.name == "BlueRacket")
         {
             _spriteRenderer.DOColor(Color.blue,0);
@@ -61,7 +63,7 @@ public class Ball : MonoBehaviour
     {
         float y = HitFactor(transform.position, racket.transform.position, racket.gameObject.GetComponent<BoxCollider2D>().bounds.size.y);
         Vector2 direction = new Vector2(dir, y).normalized;
-        GetComponent<Rigidbody2D>().velocity = direction * _speed;
+        GetComponent<Rigidbody2D>().velocity = direction * _currentSpeed;
     }
     private float HitFactor(Vector2 ballPosition, Vector2 racketPosition, float racketHight)
     {

@@ -895,7 +895,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &541596328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1800,10 +1800,10 @@ RectTransform:
   m_Father: {fileID: 2146658274}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 300}
+  m_AnchorMin: {x: 0.24214582, y: 0.3535926}
+  m_AnchorMax: {x: 0.7554792, y: 0.63629603}
+  m_AnchoredPosition: {x: 2, y: 5.5}
+  m_SizeDelta: {x: 14, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1205600454
 GameObject:
@@ -2419,6 +2419,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8948961942402484083, guid: 0936df37a5cbb354c8b28b7a144f7718, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948961942402484083, guid: 0936df37a5cbb354c8b28b7a144f7718, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1310967556}
@@ -2427,11 +2431,19 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8948961942402484083, guid: 0936df37a5cbb354c8b28b7a144f7718, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948961942402484083, guid: 0936df37a5cbb354c8b28b7a144f7718, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPlayClick
       objectReference: {fileID: 0}
     - target: {fileID: 8948961942402484083, guid: 0936df37a5cbb354c8b28b7a144f7718, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PausePlay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948961942402484083, guid: 0936df37a5cbb354c8b28b7a144f7718, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PausePlay, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8948961942402484083, guid: 0936df37a5cbb354c8b28b7a144f7718, type: 3}
@@ -3191,7 +3203,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &2087110088
 BoxCollider2D:
   m_ObjectHideFlags: 0
