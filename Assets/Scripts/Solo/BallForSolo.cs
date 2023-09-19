@@ -1,45 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 using System;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
-public class Ball : MonoBehaviour
+public class BallForSolo : MonoBehaviour
 {
     [SerializeField] private float _speed;
     private SpriteRenderer _spriteRenderer;
     private float _currentSpeed;
-    public static event Action<string> GoalTo;
+    public static event Action<string> goalTo;
+    public static event Action TouchedRed;
+
     void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>(); 
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void OnEnable()
     {
         _currentSpeed = _speed;
         transform.position = Vector2.zero;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        switch (UnityEngine.Random.Range(0, 2))
-        {
-            case 0:
-                GetComponent<Rigidbody2D>().velocity = Vector2.right * _speed;
-                break;
-            case 1:
-                GetComponent<Rigidbody2D>().velocity = Vector2.left * _speed;
-                break;
-        }
+        GetComponent<Rigidbody2D>().velocity = Vector2.left * _speed;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.gameObject.name)
         {
             case "LineOfGoalBlue":
-                GoalTo?.Invoke("Red");
+                goalTo?.Invoke("Red");
                 break;
             case "LineOfGoalRed":
-                GoalTo?.Invoke("Blue");
+                goalTo?.Invoke("Blue");
                 break;
             default:
                 break;
@@ -48,16 +39,13 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _currentSpeed++;
-        if(collision.gameObject.name == "BlueRacket")
+        if (collision.gameObject.name == "BlueRacket")
         {
-            _spriteRenderer.DOColor(Color.blue,0);
             ReboundBall(collision.gameObject, 1);
         }
-        if(collision.gameObject.name == "RedRacket")
+        if (collision.gameObject.name.Contains("RedRacket"))
         {
-
-            _spriteRenderer.DOColor(Color.red, 0);
-            ReboundBall(collision.gameObject, -1);
+            TouchedRed?.Invoke();
         }
     }
     private void ReboundBall(GameObject racket, int dir)

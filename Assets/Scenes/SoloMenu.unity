@@ -850,6 +850,9 @@ MonoBehaviour:
   - {fileID: 1094645347}
   _blockImage: {fileID: 1193845561}
   IsOpen: 0
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 0
+  _countOfPunchesMax: 0
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &318281924
 GameObject:
@@ -2487,6 +2490,9 @@ MonoBehaviour:
   - {fileID: 66592781}
   _blockImage: {fileID: 639508652}
   IsOpen: 0
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 0
+  _countOfPunchesMax: 0
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1071672258
 GameObject:
@@ -2722,6 +2728,9 @@ MonoBehaviour:
   - {fileID: 2139683227}
   _blockImage: {fileID: 1967103820}
   IsOpen: 0
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 0
+  _countOfPunchesMax: 0
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1094645347
 GameObject:
@@ -3647,6 +3656,9 @@ MonoBehaviour:
   - {fileID: 1071672258}
   _blockImage: {fileID: 470336690}
   IsOpen: 0
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 0
+  _countOfPunchesMax: 0
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1405427893
 GameObject:
@@ -4095,6 +4107,9 @@ MonoBehaviour:
   - {fileID: 141972795}
   _blockImage: {fileID: 1015342071}
   IsOpen: 0
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 0
+  _countOfPunchesMax: 0
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1584897607
 GameObject:
@@ -4550,7 +4565,10 @@ MonoBehaviour:
   - {fileID: 704892205}
   - {fileID: 600826855}
   _blockImage: {fileID: 250061692}
-  IsOpen: 0
+  IsOpen: 1
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 2
+  _countOfPunchesMax: 5
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1753315680
 GameObject:
@@ -5132,6 +5150,9 @@ MonoBehaviour:
   - {fileID: 567587749}
   _blockImage: {fileID: 1468590202}
   IsOpen: 0
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 0
+  _countOfPunchesMax: 0
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1945148463
 GameObject:
@@ -5534,6 +5555,9 @@ MonoBehaviour:
   - {fileID: 79262137}
   _blockImage: {fileID: 1713490889}
   IsOpen: 0
+  _starsCount: 0
+  _countOfPunchesForThreeStars: 0
+  _countOfPunchesMax: 0
   positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &2113577560
 GameObject:

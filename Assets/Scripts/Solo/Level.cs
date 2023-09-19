@@ -8,7 +8,9 @@ public class Level : MonoBehaviour
     [SerializeField] private GameObject[] _stars;
     [SerializeField] private GameObject _blockImage;
     public bool IsOpen = false;
-    private int _starsCount = 0;
+    public int _starsCount = 0;
+    public int _countOfPunchesForThreeStars;
+    public int _countOfPunchesMax;
     [HideInInspector] public Vector2 positionsOfEnemy;
     void Start()
     {

@@ -33,16 +33,16 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         _blueScoreText.text = _blueScore.ToString();
         _redScoreText.text = _redScore.ToString();
-        Ball.goalTo += OnGoalSwitchScore;
-        Ball.goalTo += OnGoalNotification;
+        Ball.GoalTo += OnGoalSwitchScore;
+        Ball.GoalTo += OnGoalNotification;
         TimeIsLeft += LookingForWinner;
         _timeRemaining = _secondsInRound;
         StartCoroutine(OnStartRound());
     }
     private void OnDisable()
     {
-        Ball.goalTo -= OnGoalSwitchScore;
-        Ball.goalTo -= OnGoalNotification;
+        Ball.GoalTo -= OnGoalSwitchScore;
+        Ball.GoalTo -= OnGoalNotification;
         TimeIsLeft -= LookingForWinner;
     }
     private void Start()

@@ -61,15 +61,21 @@ public class MenuManager : MonoBehaviour
     }
     public void LoadGameScene1x1OnDevice()
     {
+        _isStart = false;
         SceneManager.LoadScene(1);
     }
     public void LoadMenuSceneSolo()
     {
+        _isStart = false;
         SceneManager.LoadScene(2);
     }
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public void OnMoneyButtonClick()
+    {
+        Application.OpenURL("https://vk.com/eriksan04");
     }
     private void SetSavePath()
     {
