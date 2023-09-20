@@ -1,0 +1,38 @@
+{
+    "nickname": "eriksan",
+    "money": 0,
+    "levels": [
+        {
+            "IsOpen": true,
+            "StarsCount": 3
+        },
+        {
+            "IsOpen": true,
+            "StarsCount": 0
+        },
+        {
+            "IsOpen": false,
+            "StarsCount": 0
+        },
+        {
+            "IsOpen": false,
+            "StarsCount": 0
+        },
+        {
+            "IsOpen": false,
+            "StarsCount": 0
+        },
+        {
+            "IsOpen": false,
+            "StarsCount": 0
+        },
+        {
+            "IsOpen": false,
+            "StarsCount": 0
+        },
+        {
+            "IsOpen": false,
+            "StarsCount": 0
+        }
+    ]
+}

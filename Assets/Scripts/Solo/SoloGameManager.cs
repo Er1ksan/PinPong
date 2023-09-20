@@ -98,18 +98,23 @@ public class SoloGameManager : MonoBehaviour
             {
                 _stars[i].SetActive(true);
             }
+                User.Levels[User.SelectedLvl].StarsCount = 3;
         }
-        else if (_countOfPunchesLeft >= _countOfPunchesForTwoStars)
+        else if (_countOfPunchesLeft >= _countOfPunchesForTwoStars&&_countOfPunchesLeft < _countOfPunchesForThreeStars)
         {
             for (int i = 0; i < 2; i++)
             {
                 _stars[i].SetActive(true);
             }
+                User.Levels[User.SelectedLvl].StarsCount = 2;
         }
         else
         {
             _stars[0].SetActive(true);
+            User.Levels[User.SelectedLvl].StarsCount = 1;
         }
+        User.Levels[User.SelectedLvl+1].IsOpen = true;
+        User.SaveToFile();
     }
     private void Lose()
     {

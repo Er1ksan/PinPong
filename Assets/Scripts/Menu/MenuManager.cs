@@ -17,13 +17,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TMP_Text _nickname;
     [SerializeField] private TMP_Text _coins;
     [Header("PathOfUserFile")]
-    [SerializeField] private string _savePath;
     [SerializeField] private string _saveFileName = "UserSettings.json";
     private bool _isStart = true;
     private void Awake()
     {
         SetSavePath();
-        if (!User.LoadFromFile(_savePath)&&_isStart)
+        if (!User.LoadFromFile()&&_isStart)
         {
             FirstLaunchGame();
             _isStart = false;
@@ -36,7 +35,7 @@ public class MenuManager : MonoBehaviour
     {
         _firstLaunchGameMenu.SetActive(true);
         User.Money = 0;
-        User.SaveToFile(_savePath);
+        
     }
     
     public void OnNicknameEnter()
@@ -53,6 +52,7 @@ public class MenuManager : MonoBehaviour
         {
             User.Nickname = _inputedNickname.text;
             _nickname.text = User.Nickname;
+            User.SaveToFile();
             _firstLaunchGameMenu.SetActive(false);
         }
     }
@@ -81,20 +81,20 @@ public class MenuManager : MonoBehaviour
     private void SetSavePath()
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
-        savePath = Path.Combine(Application.persistentDataPath,saveFileName);
+        User.savePath = Path.Combine(Application.persistentDataPath,saveFileName);
 #else 
-        _savePath = Path.Combine(Application.dataPath, _saveFileName);
+        User.savePath = Path.Combine(Application.dataPath, _saveFileName);
 #endif
     }
     private void OnApplicationQuit()
     {
-        User.SaveToFile(_savePath);
+        User.SaveToFile();
     }
     private void OnApplicationPause(bool pause)
     {
         if(Application.platform == RuntimePlatform.Android)
         {
-           User.SaveToFile(_savePath);
+           User.SaveToFile();
         }
     }
 }

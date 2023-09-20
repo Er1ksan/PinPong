@@ -8,10 +8,11 @@ public static class User
 {
     public static string Nickname;
     public static int Money;
-    public static List<Level> Levels;
+    public static List<Level> Levels = new List<Level>();
     public static int SelectedLvl;
+    public static string savePath;
 
-    public static void SaveToFile(string savePath)
+    public static void SaveToFile()
     {
         UserStruct user = new UserStruct
         {
@@ -30,7 +31,7 @@ public static class User
         }
         
     }
-    public static bool LoadFromFile(string savePath)
+    public static bool LoadFromFile()
     {
         if (!File.Exists(savePath))
         {

@@ -993,7 +993,6 @@ MonoBehaviour:
   _inputedNickname: {fileID: 704270667}
   _nickname: {fileID: 1148610403}
   _coins: {fileID: 1185960921}
-  _savePath: 
   _saveFileName: UserSettings.json
 --- !u!4 &473300442
 Transform:

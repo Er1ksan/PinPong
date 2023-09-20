@@ -591,16 +591,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c2b287e515a1644ac66c55f7c11e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _countOfLvls: 8
-  levels:
-  - {fileID: 1714781262}
-  - {fileID: 2076035866}
-  - {fileID: 1088866535}
-  - {fileID: 1565916272}
-  - {fileID: 1046767865}
-  - {fileID: 1396291997}
-  - {fileID: 273358100}
-  - {fileID: 1906777325}
+  _levels:
+  - {fileID: 1714781257}
+  - {fileID: 2076035861}
+  - {fileID: 1088866530}
+  - {fileID: 1565916267}
+  - {fileID: 1046767860}
+  - {fileID: 1396291992}
+  - {fileID: 273358095}
+  - {fileID: 1906777320}
 --- !u!4 &142846619
 Transform:
   m_ObjectHideFlags: 0
@@ -704,7 +703,6 @@ GameObject:
   - component: {fileID: 273358099}
   - component: {fileID: 273358098}
   - component: {fileID: 273358097}
-  - component: {fileID: 273358100}
   m_Layer: 5
   m_Name: LVL7
   m_TagString: Untagged
@@ -732,10 +730,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1575, y: -175.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273358097
 MonoBehaviour:
@@ -784,11 +782,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -831,29 +829,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273358095}
   m_CullTransparentMesh: 1
---- !u!114 &273358100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273358095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 7
-  _stars:
-  - {fileID: 1381510916}
-  - {fileID: 698941966}
-  - {fileID: 1094645347}
-  _blockImage: {fileID: 1193845561}
-  IsOpen: 0
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 0
-  _countOfPunchesMax: 0
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &318281924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2319,6 @@ GameObject:
   - component: {fileID: 1046767864}
   - component: {fileID: 1046767863}
   - component: {fileID: 1046767862}
-  - component: {fileID: 1046767865}
   m_Layer: 5
   m_Name: LVL5
   m_TagString: Untagged
@@ -2372,10 +2346,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1125, y: -175.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046767862
 MonoBehaviour:
@@ -2424,11 +2398,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2471,29 +2445,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046767860}
   m_CullTransparentMesh: 1
---- !u!114 &1046767865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046767860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 5
-  _stars:
-  - {fileID: 1853221640}
-  - {fileID: 21723680}
-  - {fileID: 66592781}
-  _blockImage: {fileID: 639508652}
-  IsOpen: 0
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 0
-  _countOfPunchesMax: 0
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1071672258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,7 +2533,6 @@ GameObject:
   - component: {fileID: 1088866534}
   - component: {fileID: 1088866533}
   - component: {fileID: 1088866532}
-  - component: {fileID: 1088866535}
   m_Layer: 5
   m_Name: LVL3
   m_TagString: Untagged
@@ -2610,10 +2560,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -175.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088866532
 MonoBehaviour:
@@ -2662,11 +2612,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2709,29 +2659,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088866530}
   m_CullTransparentMesh: 1
---- !u!114 &1088866535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088866530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 3
-  _stars:
-  - {fileID: 1753315680}
-  - {fileID: 683978118}
-  - {fileID: 2139683227}
-  _blockImage: {fileID: 1967103820}
-  IsOpen: 0
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 0
-  _countOfPunchesMax: 0
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1094645347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,7 +3437,6 @@ GameObject:
   - component: {fileID: 1396291996}
   - component: {fileID: 1396291995}
   - component: {fileID: 1396291994}
-  - component: {fileID: 1396291997}
   m_Layer: 5
   m_Name: LVL6
   m_TagString: Untagged
@@ -3538,10 +3464,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1125, y: -625.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396291994
 MonoBehaviour:
@@ -3590,11 +3516,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3637,29 +3563,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396291992}
   m_CullTransparentMesh: 1
---- !u!114 &1396291997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396291992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 6
-  _stars:
-  - {fileID: 1434567350}
-  - {fileID: 800821116}
-  - {fileID: 1071672258}
-  _blockImage: {fileID: 470336690}
-  IsOpen: 0
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 0
-  _countOfPunchesMax: 0
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1405427893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,7 +3864,6 @@ GameObject:
   - component: {fileID: 1565916271}
   - component: {fileID: 1565916270}
   - component: {fileID: 1565916269}
-  - component: {fileID: 1565916272}
   m_Layer: 5
   m_Name: LVL4
   m_TagString: Untagged
@@ -3989,10 +3891,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -625.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565916269
 MonoBehaviour:
@@ -4041,11 +3943,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4088,29 +3990,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565916267}
   m_CullTransparentMesh: 1
---- !u!114 &1565916272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565916267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 4
-  _stars:
-  - {fileID: 586115915}
-  - {fileID: 1375813075}
-  - {fileID: 141972795}
-  _blockImage: {fileID: 1015342071}
-  IsOpen: 0
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 0
-  _countOfPunchesMax: 0
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1584897607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,7 +4299,6 @@ GameObject:
   - component: {fileID: 1714781261}
   - component: {fileID: 1714781260}
   - component: {fileID: 1714781259}
-  - component: {fileID: 1714781262}
   m_Layer: 5
   m_Name: LVL1
   m_TagString: Untagged
@@ -4448,10 +4326,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -175.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714781259
 MonoBehaviour:
@@ -4500,11 +4378,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4547,29 +4425,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714781257}
   m_CullTransparentMesh: 1
---- !u!114 &1714781262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714781257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 1
-  _stars:
-  - {fileID: 2024854864}
-  - {fileID: 704892205}
-  - {fileID: 600826855}
-  _blockImage: {fileID: 250061692}
-  IsOpen: 1
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 2
-  _countOfPunchesMax: 5
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1753315680
 GameObject:
   m_ObjectHideFlags: 0
@@ -5004,7 +4859,6 @@ GameObject:
   - component: {fileID: 1906777324}
   - component: {fileID: 1906777323}
   - component: {fileID: 1906777322}
-  - component: {fileID: 1906777325}
   m_Layer: 5
   m_Name: LVL8
   m_TagString: Untagged
@@ -5032,10 +4886,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1575, y: -625.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906777322
 MonoBehaviour:
@@ -5084,11 +4938,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5131,29 +4985,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906777320}
   m_CullTransparentMesh: 1
---- !u!114 &1906777325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906777320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 8
-  _stars:
-  - {fileID: 445288574}
-  - {fileID: 833781315}
-  - {fileID: 567587749}
-  _blockImage: {fileID: 1468590202}
-  IsOpen: 0
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 0
-  _countOfPunchesMax: 0
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &1945148463
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,7 +5240,6 @@ GameObject:
   - component: {fileID: 2076035865}
   - component: {fileID: 2076035864}
   - component: {fileID: 2076035863}
-  - component: {fileID: 2076035866}
   m_Layer: 5
   m_Name: LVL2
   m_TagString: Untagged
@@ -5437,10 +5267,10 @@ RectTransform:
   m_Father: {fileID: 1334128628}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -625.22003}
+  m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076035863
 MonoBehaviour:
@@ -5489,11 +5319,11 @@ MonoBehaviour:
       - m_Target: {fileID: 142846618}
         m_TargetAssemblyTypeName: SoloMenu, Assembly-CSharp
         m_MethodName: OnLevelChoose
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5536,29 +5366,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076035861}
   m_CullTransparentMesh: 1
---- !u!114 &2076035866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076035861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978fd6f3b8c1505499659d23ab8ea5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberOfLevel: 2
-  _stars:
-  - {fileID: 342219658}
-  - {fileID: 532263298}
-  - {fileID: 79262137}
-  _blockImage: {fileID: 1713490889}
-  IsOpen: 0
-  _starsCount: 0
-  _countOfPunchesForThreeStars: 0
-  _countOfPunchesMax: 0
-  positionsOfEnemy: {x: 0, y: 0}
 --- !u!1 &2113577560
 GameObject:
   m_ObjectHideFlags: 0
