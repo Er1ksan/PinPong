@@ -42,9 +42,11 @@ public class BallForSolo : MonoBehaviour
         if (collision.gameObject.name == "BlueRacket")
         {
             ReboundBall(collision.gameObject, 1);
+            _spriteRenderer.color = Color.blue;
         }
-        if (collision.gameObject.name.Contains("RedRacket"))
+        if (collision.gameObject.name == "RedRacket")
         {
+            _spriteRenderer.color = Color.red;
             TouchedRed?.Invoke();
         }
     }

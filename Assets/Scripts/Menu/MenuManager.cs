@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
     {
         _firstLaunchGameMenu.SetActive(true);
         User.Money = 0;
+        User.SaveToFile(_savePath);
     }
     
     public void OnNicknameEnter()

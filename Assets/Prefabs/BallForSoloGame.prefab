@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7943953783124370943}
   - component: {fileID: 7943953783124370942}
   - component: {fileID: 7943953783124370941}
-  - component: {fileID: 7943953783124370929}
+  - component: {fileID: 7572338664451904292}
   m_Layer: 0
   m_Name: BallForSoloGame
   m_TagString: Untagged
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &7943953783124370929
+--- !u!114 &7572338664451904292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7943953783124370940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb20dc68e6797cd428b8e597fb49919a, type: 3}
+  m_Script: {fileID: 11500000, guid: 05ae81a6ee854e74b8625581feb16dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
