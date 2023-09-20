@@ -106,12 +106,18 @@ public class SoloGameManager : MonoBehaviour
             {
                 _stars[i].SetActive(true);
             }
+            if (User.Levels[User.SelectedLvl].StarsCount < 2)
+            {
                 User.Levels[User.SelectedLvl].StarsCount = 2;
+            }
         }
         else
         {
             _stars[0].SetActive(true);
-            User.Levels[User.SelectedLvl].StarsCount = 1;
+            if (User.Levels[User.SelectedLvl].StarsCount < 1)
+            {
+                User.Levels[User.SelectedLvl].StarsCount = 1;
+            }
         }
         User.Levels[User.SelectedLvl+1].IsOpen = true;
         User.SaveToFile();
@@ -129,11 +135,11 @@ public class SoloGameManager : MonoBehaviour
     }
     public void LoadGameSceneAgain()
     {
-        SceneManager.LoadScene(2+User.SelectedLvl);
+        SceneManager.LoadScene(3+User.SelectedLvl);
     }
     public void LoadNextLvl()
     {
         User.SelectedLvl++;
-        SceneManager.LoadScene(2 + User.SelectedLvl);
+        SceneManager.LoadScene(3 + User.SelectedLvl);
     }
 }

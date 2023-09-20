@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _currentSpeed++;
+        _currentSpeed+=2;
         if(collision.gameObject.name == "BlueRacket")
         {
             _spriteRenderer.DOColor(Color.blue,0);

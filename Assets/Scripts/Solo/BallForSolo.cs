@@ -44,7 +44,7 @@ public class BallForSolo : MonoBehaviour
             ReboundBall(collision.gameObject, 1);
             _spriteRenderer.color = Color.blue;
         }
-        if (collision.gameObject.name == "RedRacket")
+        if (collision.gameObject.layer == 6)
         {
             _spriteRenderer.color = Color.red;
             TouchedRed?.Invoke();

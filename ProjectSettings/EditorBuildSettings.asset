@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SoloMenu.unity
     guid: 504246379f65b6546973f40780382447
   - enabled: 1
-    path: Assets/Scenes/LVL1.unity
+    path: Assets/Scenes/SoloLvls/LVL1.unity
     guid: 116ce0f0a8303864fa0c40bdf2853845
+  - enabled: 1
+    path: Assets/Scenes/SoloLvls/LVL2.unity
+    guid: b319a27c7d6fb194f93fd88eac7816fd
+  - enabled: 1
+    path: Assets/Scenes/SoloLvls/LVL3.unity
+    guid: 89071c9b33f1d5944b2066a2fe573500
+  - enabled: 1
+    path: Assets/Scenes/SoloLvls/LVL4.unity
+    guid: 75da2a687867d574c9b4c018862a83a2
+  - enabled: 1
+    path: Assets/Scenes/SoloLvls/LVL5.unity
+    guid: 4cf3bf86c63cd624dbee44b166356123
   m_configObjects: {}
