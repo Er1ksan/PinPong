@@ -6,10 +6,12 @@ using System;
 public class BallForSolo : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private AudioSource _punch;
     private SpriteRenderer _spriteRenderer;
     private float _currentSpeed;
     public static event Action<string> goalTo;
     public static event Action TouchedRed;
+    
 
     void Start()
     {
@@ -20,7 +22,7 @@ public class BallForSolo : MonoBehaviour
         _currentSpeed = _speed;
         transform.position = Vector2.zero;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GetComponent<Rigidbody2D>().velocity = Vector2.left * _speed;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0.25f,-0.5f) * _speed;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,7 +40,8 @@ public class BallForSolo : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _currentSpeed++;
+        _punch.Play();
+        _currentSpeed+=0.2f;
         if (collision.gameObject.name == "BlueRacket")
         {
             ReboundBall(collision.gameObject, 1);

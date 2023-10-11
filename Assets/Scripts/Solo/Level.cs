@@ -13,9 +13,10 @@ public class Level
         IsOpen = false;
         StarsCount = 0;
     }
-    public Level(bool isOpen)
+    public Level(bool istrue)
     {
-        IsOpen = isOpen;
+        IsOpen = istrue;
         StarsCount = 0;
     }
+
 }

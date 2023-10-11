@@ -4,59 +4,53 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using TMPro;
+using YG;
 
 public class SoloGameManager : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private TMP_Text _countOfPunchesText;
     [SerializeField] private TMP_Text _timerBeforeGameStart;
-    [SerializeField] private GameObject[] _stars;
+
+    [SerializeField] private GameObject[] _objectsToHideOnEnd;
     [Header("Settings")]
     [SerializeField] private float _timeBeforeStart;
-    [SerializeField] private int _countOfPunchesMax;
-    [SerializeField] private int _countOfPunchesForThreeStars;
-    [SerializeField] private int _countOfPunchesForTwoStars;
     [Header("Prefabs")]
     [SerializeField] private GameObject _ballPrefab;
     [Header("WinnerLoserWindow")]
     [SerializeField] private GameObject _winnerWindow;
     [SerializeField] private TMP_Text _massageInWinnerWindow;
+    [SerializeField] private TMP_Text _countofPunchesOnEnd;
     private GameObject _ball;
-    private int _countOfPunchesLeft;
+    private int _countOfPunches = 0;
 
     private void OnEnable()
     {
-        _countOfPunchesLeft = _countOfPunchesMax;
-        _countOfPunchesText.text = _countOfPunchesLeft.ToString();
+        _countOfPunchesText.text = _countOfPunches.ToString();
         Time.timeScale = 1;
         BallForSolo.goalTo += OnGoal;
         BallForSolo.TouchedRed += OnTouchedRed;
+
         StartCoroutine(OnStartRound());
+        _ball = Instantiate(_ballPrefab, Vector3.zero, Quaternion.identity);
+        _ball.SetActive(false);
+        YandexGame.RewardVideoEvent += OnContinueGame;
     }
     private void OnDisable()
     {
         BallForSolo.goalTo -= OnGoal;
         BallForSolo.TouchedRed -= OnTouchedRed;
-    }
-    private void Start()
-    {
-
-    }
-    void Update()
-    {
-        
+        YandexGame.RewardVideoEvent -= OnContinueGame;
     }
     private void OnTouchedRed()
     {
-        _countOfPunchesLeft--;
-        _countOfPunchesText.text = _countOfPunchesLeft.ToString();
-        if (_countOfPunchesLeft <= 0)
-        {
-            Lose();
-        }
+        _countOfPunches++;
+        _countOfPunchesText.text = _countOfPunches.ToString();
     }
     private IEnumerator OnStartRound()
     {
+        Time.timeScale = 1;
+        _timerBeforeGameStart.gameObject.SetActive(true);
         float time = _timeBeforeStart;
 
         for (; ; )
@@ -67,79 +61,61 @@ public class SoloGameManager : MonoBehaviour
             if (time <= 0)
             {
                 _timerBeforeGameStart.gameObject.SetActive(false);
-                _ball = Instantiate(_ballPrefab, Vector3.zero, Quaternion.identity);
+                _ball.SetActive(true);
                 break;
             }
         }
 
     }
+    private void OnContinueGame(int id)
+    {
+        _winnerWindow.SetActive(false);
+        for (int i = 0; i < _objectsToHideOnEnd.Length; i++)
+        {
+            _objectsToHideOnEnd[i].SetActive(true);
+        }
+        StartCoroutine(OnStartRound());
+    }
     private void OnGoal(string colorOfGoal)
     {
-        _ball.SetActive(false);
-        if(colorOfGoal == "Blue")
+        if(colorOfGoal == "Red")
         {
-            Win();
-        }
-        else
-        {
+            _ball.SetActive(false);
             Lose();
         }
         
     }
-    private void Win()
-    {
-        Time.timeScale = 0;
-        _winnerWindow.SetActive(true);
-        _massageInWinnerWindow.color = Color.green;
-        _massageInWinnerWindow.text = "Умница!";
-        if (_countOfPunchesLeft >= _countOfPunchesForThreeStars)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                _stars[i].SetActive(true);
-            }
-                User.Levels[User.SelectedLvl].StarsCount = 3;
-        }
-        else if (_countOfPunchesLeft >= _countOfPunchesForTwoStars&&_countOfPunchesLeft < _countOfPunchesForThreeStars)
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                _stars[i].SetActive(true);
-            }
-            if (User.Levels[User.SelectedLvl].StarsCount < 2)
-            {
-                User.Levels[User.SelectedLvl].StarsCount = 2;
-            }
-        }
-        else
-        {
-            _stars[0].SetActive(true);
-            if (User.Levels[User.SelectedLvl].StarsCount < 1)
-            {
-                User.Levels[User.SelectedLvl].StarsCount = 1;
-            }
-        }
-        User.Levels[User.SelectedLvl+1].IsOpen = true;
-        User.SaveToFile();
-    }
     private void Lose()
     {
         Time.timeScale = 0;
+        YandexGame.savesData.AddCoins(_countOfPunches);
+        for(int i = 0;i<_objectsToHideOnEnd.Length;i++)
+        {
+            _objectsToHideOnEnd[i].SetActive(false);
+        }
+        _countofPunchesOnEnd.text = "+" + _countOfPunches.ToString();
         _winnerWindow.SetActive(true);
-        _massageInWinnerWindow.color = Color.red;
-        _massageInWinnerWindow.text = "Попробуйте еще раз";
+        if (YandexGame.savesData.record < _countOfPunches)
+        {
+            _massageInWinnerWindow.text = "Новый рекорд!";
+            YandexGame.savesData.SetRecord(_countOfPunches);
+        }
+        else if (YandexGame.savesData.record - _countOfPunches < 5)
+        {
+            _massageInWinnerWindow.text = "Почти рекорд, попробуйте еще!";
+        }
+    }
+    public void OnContinueClick()
+    {
+        YandexGame.RewVideoShow(1);
+        //OnContinueGame(1);
     }
     public void LoadLobbyScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Menu");
     }
-    public void LoadGameSceneAgain()
+    public void PlayAgain()
     {
-        SceneManager.LoadScene(3+User.SelectedLvl);
-    }
-    public void LoadNextLvl()
-    {
-        User.SelectedLvl++;
-        SceneManager.LoadScene(3 + User.SelectedLvl);
+        SceneManager.LoadScene("NEWSOLO");
     }
 }

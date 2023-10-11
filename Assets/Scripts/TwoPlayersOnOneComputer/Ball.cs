@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _currentSpeed+=2;
+        _currentSpeed+=0.5f;
         if(collision.gameObject.name == "BlueRacket")
         {
             _spriteRenderer.DOColor(Color.blue,0);
@@ -62,7 +62,8 @@ public class Ball : MonoBehaviour
     }
     private void ReboundBall(GameObject racket, int dir)
     {
-        float y = HitFactor(transform.position, racket.transform.position, racket.gameObject.GetComponent<BoxCollider2D>().bounds.size.y);
+        float y = HitFactor(transform.position, racket.transform.position, 
+        racket.gameObject.GetComponent<BoxCollider2D>().bounds.size.y);
         Vector2 direction = new Vector2(dir, y).normalized;
         GetComponent<Rigidbody2D>().velocity = direction * _currentSpeed;
     }

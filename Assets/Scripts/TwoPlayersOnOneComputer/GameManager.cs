@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _timeOfGoalNotification;
     [Header("Prefabs")]
     [SerializeField] private GameObject _ballPrefab;
+    [SerializeField] private GameObject _square;
     [Header("WinnerWindow")]
     [SerializeField] private GameObject _winnerWindow;
     [SerializeField] private TMP_Text _winner;
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
     private void LookingForWinner()
     {
         _winnerWindow.SetActive(true);
+        _square.SetActive(false);
         _ball.SetActive(false);
         if (_blueScore < _redScore)
         {
